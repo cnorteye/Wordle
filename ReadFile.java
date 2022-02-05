@@ -20,10 +20,6 @@ public class ReadFile{
             Random rand = new Random(System.currentTimeMillis());
             String guessWord = words.get(rand.nextInt(words.size()));
             System.out.println(guessWord);
-          
-            
-
-            
             
         } catch (IOException e) {
             System.out.println(" An error has occurred. ");
