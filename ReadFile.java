@@ -1,6 +1,6 @@
 import java.io.File;  // Import the File class
 import java.io.IOException;    // Import this class to handle errors
-import java.util.ArrayList; // test comment
+import java.util.ArrayList; // test comment; another comment -- comfort
 import java.util.Random;
 import java.util.Scanner; // Import the Scanner class to read text files
 
