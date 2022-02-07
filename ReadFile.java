@@ -28,9 +28,8 @@ public class ReadFile{
             System.out.println("Hello, Welcome to Burdle.... the best game on the web currently!");
             System.out.println("Enter a 5 letter word to guess the word of the day.");
 
-           String userAnswer = guess.nextLine();
-            
-
+           String userAnswer = guess.nextLine();   // user response to question
+                    
 
           // check to make sure the user input is not more than 5 words
                 if(userAnswer.length() > 5){
@@ -39,7 +38,8 @@ public class ReadFile{
                     System.out.println(newAnswer);
 
                 }else{
-                        System.out.println();
+                        System.out.println(userAnswer);  // printing out the user response
+            
                 }
 
 
