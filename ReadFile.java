@@ -7,8 +7,11 @@ import java.util.Scanner; // Import the Scanner class to read text files
 public class ReadFile{
     public static void main(String[] args) {
 
+    	
+    	
         // read text file into an ArrayList
         try {
+        	
             File myObj = new File("WordsList.txt");
             Scanner myScanner = new Scanner(myObj);
             ArrayList<String> words = new ArrayList<String>();
@@ -47,6 +50,8 @@ public class ReadFile{
         } catch (IOException e) {
             System.out.println(" An error has occurred. ");
             e.printStackTrace();
+            
+
         }
     }
 }
