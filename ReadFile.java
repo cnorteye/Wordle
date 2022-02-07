@@ -19,7 +19,30 @@ public class ReadFile{
                 // generating random words
             Random rand = new Random(System.currentTimeMillis());
             String guessWord = words.get(rand.nextInt(words.size()));
-            System.out.println(guessWord);
+            //System.out.println(guessWord);
+
+
+            // get user answer input
+
+            Scanner guess = new Scanner(System.in);
+            System.out.println("Hello, Welcome to Burdle.... the best game on the web currently!");
+            System.out.println("Enter a 5 letter word to guess the word of the day.");
+
+           String userAnswer = guess.nextLine();   // user response to question
+                    
+
+          // check to make sure the user input is not more than 5 words
+                if(userAnswer.length() > 5){
+                    System.out.println("Your guess word is too long. Try to guess a 5 letter word");
+                    String newAnswer = guess.nextLine();
+                    System.out.println(newAnswer);
+
+                }else{
+                        System.out.println(userAnswer);  // printing out the user response
+            
+                }
+
+
             
         } catch (IOException e) {
             System.out.println(" An error has occurred. ");
