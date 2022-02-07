@@ -46,8 +46,8 @@ public class ReadFile{
         
                 // checking to make sure user's input matches with our guess word
 
-/*                 System.out.println("Guess a five letter word");
-                Scanner scan = new Scanner(System.in); */
+              // System.out.println("Guess a five letter word");
+                Scanner scan = new Scanner(System.in); 
 
                 // test word 
                 String correctWord=("house");
