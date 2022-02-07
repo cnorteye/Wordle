@@ -1,6 +1,6 @@
 import java.io.File;  // Import the File class
 import java.io.IOException;    // Import this class to handle errors
-import java.util.ArrayList; // test comment; another comment -- comfort// comment2
+import java.util.ArrayList; 
 import java.util.Random;
 import java.util.Scanner; // Import the Scanner class to read text files
 
@@ -8,10 +8,18 @@ public class ReadFile{
     public static void main(String[] args) {
 
         //TO DO:
+                // STEP 4 A: making sure the correct word matches with the random generated word :: GENESIS
+                // STEP 5: when there is a letter in the word but not in the right place :: COMFORT
+                // STEP 5 A : make sure step 5 works with the randomly generated word :: COMFORT
+                // STEP 6: set a limit for the user to only respond 5 times :: GENESIS
+                            // while (tries > 5){
+
+                        // }
+                // STEP 7; if there is time: work on asthetics :: COMFORT
 
                  
         try {
-        	 // read the text file into an ArrayList
+        	 // STEP 1: read the text file into an ArrayList
             File myObj = new File("WordsList.txt");
             Scanner myScanner = new Scanner(myObj);
             ArrayList<String> words = new ArrayList<String>();
@@ -19,35 +27,37 @@ public class ReadFile{
                 words.add(myScanner.nextLine());
                 }
                 
-                // generating random words
-            Random rand = new Random(System.currentTimeMillis());
-            String guessWord = words.get(rand.nextInt(words.size()));
-            //System.out.println(guessWord);
+            // STEP 2: generating random words
+                Random rand = new Random(System.currentTimeMillis());
+                String guessWord = words.get(rand.nextInt(words.size()));
+                //System.out.println(guessWord);
 
 
-            // get user answer input
-            Scanner guess = new Scanner(System.in);
-            System.out.println("Hello, Welcome to Burdle.... the best game on the web currently!");
-            System.out.println("Enter a 5 letter word to guess the word of the day.");
-            String userAnswer = guess.nextLine();   // user response to question
-                    
+            // STEP 3: get user answer input :: COMFORT
+            /*
+                        Scanner guess = new Scanner(System.in);
+                        System.out.println("Hello, Welcome to Burdle.... the best game on the web currently!");
+                        System.out.println("Enter a 5 letter word to guess the word of the day.");
+                        String userAnswer = guess.nextLine();   // user response to question 
+                                
 
-          // check to make sure the user input is not more than 5 words
-                if(userAnswer.length() > 5){
-                    System.out.println("Your guess word is too long. Try to guess a 5 letter word");
-                    String newAnswer = guess.nextLine();
-                    System.out.println(newAnswer);
+                        // STEP 3 A. check to make sure the user input is not more than 5 words
+                        if(userAnswer.length() > 5){
+                            //System.out.println("Your guess word is too long. Try to guess a 5 letter word");
+                            String newAnswer = guess.nextLine();
+                            System.out.println(newAnswer);
 
-                }else{
-                        System.out.println(userAnswer);  // printing out the user response
+                        }else{
+                                System.out.println(userAnswer);  // printing out the user response
+                        } 
+             */
             
-                }
-
+ 
         
-                // checking to make sure user's input matches with our guess word
+                // STEP 4: checking to make sure user's input matches with our guess word :: GENESIS
 
               // System.out.println("Guess a five letter word");
-                Scanner scan = new Scanner(System.in); 
+                 Scanner scan = new Scanner(System.in); 
 
                 // test word 
                 String correctWord=("house");
