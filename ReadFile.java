@@ -7,11 +7,11 @@ import java.util.Scanner; // Import the Scanner class to read text files
 public class ReadFile{
     public static void main(String[] args) {
 
-    	
-    	
-        // read text file into an ArrayList
+        //TO DO:
+
+                 
         try {
-        	
+        	 // read the text file into an ArrayList
             File myObj = new File("WordsList.txt");
             Scanner myScanner = new Scanner(myObj);
             ArrayList<String> words = new ArrayList<String>();
@@ -26,12 +26,10 @@ public class ReadFile{
 
 
             // get user answer input
-
             Scanner guess = new Scanner(System.in);
             System.out.println("Hello, Welcome to Burdle.... the best game on the web currently!");
             System.out.println("Enter a 5 letter word to guess the word of the day.");
-
-           String userAnswer = guess.nextLine();   // user response to question
+            String userAnswer = guess.nextLine();   // user response to question
                     
 
           // check to make sure the user input is not more than 5 words
@@ -43,6 +41,39 @@ public class ReadFile{
                 }else{
                         System.out.println(userAnswer);  // printing out the user response
             
+                }
+
+        
+                // checking to make sure user's input matches with our guess word
+
+              // System.out.println("Guess a five letter word");
+                Scanner scan = new Scanner(System.in); 
+
+                // test word 
+                String correctWord=("house");
+                String wordGuess,dash="-";
+                
+                int numGuesses= 5;
+              wordGuess= scan.nextLine(); // scanning in character from keyboard
+                
+                if (correctWord.contains(wordGuess)) {
+                    int guessedIndex=correctWord.indexOf(wordGuess);
+         
+                    String outString="";
+         
+                  for(int i=0;i<guessedIndex;i++){
+                        outString+=dash; //repeat dash until we get to the correctly guessed letter
+                    }
+         
+                    outString+=wordGuess; //put the letter in
+         
+                    for(int i=guessedIndex;i<correctWord.length();i++){
+                        outString+=dash; //repeat dash until we get to end of the word
+                    }
+         
+                    System.out.println(outString);
+                } else{
+                    System.out.println("end of code");
                 }
 
 
