@@ -77,7 +77,7 @@ public class ReadFile{
         	 // STEP 1: read the text file into an ArrayList
             File myObj = new File("WordsList.txt");
             Scanner myScanner = new Scanner(myObj);
-            ArrayList<String> words = new ArrayList<String>();
+            ArrayList<String> words = new ArrayList<>();
             
             while(myScanner.hasNext()){
                 words.add(myScanner.nextLine());
@@ -92,53 +92,52 @@ public class ReadFile{
                 System.out.println(guessWord);
 
 
-            // STEP 3: get user answer input
-            System.out.println("Hello, Welcome to Burdle.... the best game on the web currently!");
-            System.out.println();
-            System.out.println("Here are some simple rules for this game. You will have 5 attempt to correctly guess the word of today" + " This word is a 5 letter word and it can be any 5 letter word you can think of.");
-            System.out.print("If you guess the word incorrectly, you will see if any of the letters in your words matches correctly to the guess word of the day. If not, you will have to keep guessing until your chances are up or until you guess the word correctly");
-            System.out.println();
-            System.out.println(" Are you ready to try ..... yayyyy!");
-            System.err.println();
+            try (// STEP 3: get user answer input
+            Scanner word = new Scanner(System.in)) {
+                System.out.println("Hello, Welcome to Burdle.... the best game on the web currently!");
+                System.out.println();
+                System.out.println("Here are some simple rules for this game. You will have 5 attempt to correctly guess the word of today" + " This word is a 5 letter word and it can be any 5 letter word you can think of.");
+                System.out.print("If you guess the word incorrectly, you will see if any of the letters in your words matches correctly to the guess word of the day. If not, you will have to keep guessing until your chances are up or until you guess the word correctly");
+                System.out.println();
+                System.out.println(" Are you ready to try ..... yayyyy!");
+                System.err.println();
 
-                Scanner word = new Scanner(System.in);
+                    
                 String userInput1 = word.nextLine();   // user response to question 
-             String capUserInput1 = userInput1.substring(0, 1).toUpperCase() + userInput1.substring(1);
+                String capUserInput1 = userInput1.substring(0, 1).toUpperCase() + userInput1.substring(1);
 
-            if(isUserResponseCorrectLength(capUserInput1) && isYourGuessCorrect(guessWord, capUserInput1)){
-                    System.out.println(guessWord + " is the correct answer! Excellent work!");
-                }else{
-                    System.out.println();
-                }
+                if(isUserResponseCorrectLength(capUserInput1) && isYourGuessCorrect(guessWord, capUserInput1))
+                        System.out.println(guessWord + " is the correct answer! Excellent work!");
+                    
 
                 if (!isUserResponseCorrectLength(capUserInput1)){
-                    changeTheWord(capUserInput1);
-                    String userInput2 = word.nextLine();
-                        String capUserInput2 = userInput2.substring(0, 1).toUpperCase() + userInput2.substring(1);
-                        capUserInput1 = String.valueOf(capUserInput2);
-                }else{
-                    System.out.println();
-                    }
-                
-                   
+                        changeTheWord(capUserInput1);
+                        String userInput2 = word.nextLine();
+                            String capUserInput2 = userInput2.substring(0, 1).toUpperCase() + userInput2.substring(1);
+                            capUserInput1 = String.valueOf(capUserInput2);
+                    }else{
+                        System.out.println();
+                        }
+                    
+                    
 
                 int userAttempt = 0;
                 while(userAttempt < 5){
-                    if(!isYourGuessCorrect(guessWord, capUserInput1)){
-                        checkForTheWrongAnswer(guessWord, capUserInput1);
-                                            
-                            System.out.println();
-                            System.out.println("based on your answer, attempt again");
-                            String userInput3 = word.nextLine();
-                            String capUserInput3 = userInput3.substring(0, 1).toUpperCase() + userInput3.substring(1);
-                            capUserInput1 = String.valueOf(capUserInput3);
+                        if(!isYourGuessCorrect(guessWord, capUserInput1)){
+                            checkForTheWrongAnswer(guessWord, capUserInput1);
+                                                
+                                System.out.println();
+                                System.out.println("based on your answer, attempt again");
+                                String userInput3 = word.nextLine();
+                                String capUserInput3 = userInput3.substring(0, 1).toUpperCase() + userInput3.substring(1);
+                                capUserInput1 = String.valueOf(capUserInput3);
+
+                    }
+                
 
                 }
-               
-
             }
-                        
-        word.close();
+            
         
         } catch (IOException e) {
             System.out.println(" An error has occurred. ");

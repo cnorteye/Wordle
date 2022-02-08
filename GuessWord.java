@@ -10,31 +10,31 @@ public class GuessWord{
 	  
        Random rand = new Random(System.currentTimeMillis());
        File myObj = new File("WordsList.txt");
-       ArrayList<String> words = new ArrayList<String>();
+       ArrayList<String> words = new ArrayList<>();
 	String correctWord = words.get(rand.nextInt(words.size()));
 	 System.out.println(correctWord);
        String correctWord2=correctWord;
-       String wordGuess,dash="-";
+       String wordGuess;
+       String dash="-";
        System.out.println("Guess a five letter word");
-       Scanner scan = new Scanner(System.in);
+       try (Scanner scan = new Scanner(System.in)) {
+        try {
+               try (Scanner myScanner = new Scanner(myObj)) {
+                while(myScanner.hasNext()){
+                       words.add(myScanner.nextLine());
+                       }
+            }
+           
+           }
+            catch (IOException e) {
+               System.out.println(" An error has occurred. ");
+               e.printStackTrace();
+           }
+           
+           
+           wordGuess= scan.nextLine(); // scanning in character from keyboard
+    }
        
-       
-       try {
-           Scanner myScanner = new Scanner(myObj);
-         
-           while(myScanner.hasNext()){
-               words.add(myScanner.nextLine());
-               }
-       
-       }
-        catch (IOException e) {
-           System.out.println(" An error has occurred. ");
-           e.printStackTrace();
-       }
-       
-       
-       int numGuesses= 5;
-     wordGuess= scan.nextLine(); // scanning in character from keyboard
        
        if (correctWord2.contains(wordGuess)) {
            int guessedIndex=correctWord2.indexOf(wordGuess);
