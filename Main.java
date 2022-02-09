@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner; // Import the Scanner class to read text files
 
-public class ReadFile{
+public class Main{
 
  // fuction to captialize the first letter of the user's answer
                                 
